@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
 import os
 
 """emoticry.emoticry
@@ -17,6 +18,8 @@ class Translation(object):
     """
     def __init__(self, table=[hex(_)[2:] for _ in range(256)]):
         self.table = table
+        for c in self.table:
+            c = c.encode('utf-8')
 
     def translate(self, name):
         new_name = ''
