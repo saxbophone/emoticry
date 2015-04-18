@@ -26,6 +26,14 @@ class Translation(object):
             else:
                 new_name += c
         return new_name
+    
+    def untranslate(self, name):
+        new_name = ''
+        for c in name:
+            if len(c) == 1:
+                new_name += chr(self.table.index(c))
+            else:
+                new_name += c
 
 
 emoji_translation = Translation(
