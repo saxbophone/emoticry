@@ -34,6 +34,7 @@ class Translation(object):
                 new_name += chr(self.table.index(c))
             else:
                 new_name += c
+        return new_name
 
 
 emoji_translation = Translation(
