@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+import os
+from setuptools import setup
+
+
+def read(fname):
+    """
+    Utility function for loading the README in long description.
+    """
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
 setup(
@@ -12,7 +20,7 @@ setup(
     version='0.0.1',
 
     description='Mercilessly translates file names to emoji',
-    long_description='Mercilessly translates all names of files within a given directory to emoji',
+    long_description=read('README.md'),
 
     # The project's main homepage.
     url='https://github.com/saxbophone/emoticry',
@@ -79,7 +87,8 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        # 'sample': ['package_data.dat'],
+        'README.md': ['README.md'],
+        'LICENSE': ['LICENSE'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
