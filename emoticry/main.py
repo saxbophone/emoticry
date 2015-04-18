@@ -15,4 +15,4 @@ def main():
     """
     The main entry point function for running emoticry from the command line.
     """
-    emoticry.emojify()
+    emoticry.emojify(recursive=True)

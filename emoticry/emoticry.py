@@ -37,10 +37,12 @@ def emojify(directory='.', recursive=False, translation=Translation()):
             directories = files[1]
             filenames = files[2]
             print('Directories in {0}:'.format(path))
-            for d in directories:
-                print(d)
-            for f in filenames:
-                print(f)
+            for i, d in enumerate(directories):
+                os.rename(os.path.join(path, d), os.path.join(path, translation.translate(d)))
+                directories[i] = translation.translate(d)
+            for i, f in enumerate(filenames):
+                os.rename(os.path.join(path, f), os.path.join(path, translation.translate(f)))
+                filenames[i] = translation.translate(f)
     else:
         for f in os.listdir(directory):
             os.rename(os.path.join(directory, f), os.path.join(directory, translation.translate(f)))
