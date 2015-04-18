@@ -9,7 +9,24 @@ This file contains the bulk of logic for the emoticry library.
 """
 
 
-def emojify(directory='.', recursive=False):
+class Translation(object):
+    """
+    A generic Translation class for translating filenames.
+    """
+    def __init__(self, table=[hex(_)[2:] for _ in range(256)]):
+        self.table = table
+
+    def translate(self, name):
+        new_name = ''
+        for c in name:
+            if len(c) == 1:
+                new_name += self.table[ord(c)]
+            else:
+                new_name += c
+        return new_name
+
+ 
+def emojify(directory='.', recursive=False, translation=Translation()):
     """
     For the given directory, iterate over all files and folders within it
     (optionally recursively) and translate the file name characters to emoji.
@@ -25,5 +42,5 @@ def emojify(directory='.', recursive=False):
             for f in filenames:
                 print(f)
     else:
-        for files in os.listdir(directory):
-            print(files)
+        for f in os.listdir(directory):
+            os.rename(os.path.join(directory, f), os.path.join(directory, translation.translate(f)))
