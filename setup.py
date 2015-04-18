@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 
 
@@ -29,14 +30,14 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        ''Development Status :: 1 - Planning'',
+        'Development Status :: 1 - Planning',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
-	'Intended Audience :: System Administrators',
-	'Topic :: Artistic Software',
-	'Topic :: Education',
+        'Intended Audience :: System Administrators',
+        'Topic :: Artistic Software',
+        'Topic :: Education',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',
@@ -57,7 +58,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    packages=['emoticry'],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
@@ -91,8 +92,8 @@ setup(
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
-        # 'console_scripts': [
-        #     'emoticry=emoticry:main',
-        # ],
+        'console_scripts': [
+            'emoticry=emoticry.main:main',
+        ],
     },
 )
