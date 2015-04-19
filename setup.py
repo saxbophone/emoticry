@@ -4,23 +4,19 @@ import os
 from setuptools import setup
 
 
-def read(fname):
-    """
-    Utility function for loading the README in long description.
-    """
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-
 setup(
     name='emoticry',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.2',
+    version='0.0.3',
 
     description='Mercilessly translates file names to emoji',
-    long_description=read('README.md'),
+    long_description=('Mercilessly translates all names of files within a '
+                      'directory to emoji. This program must be used with '
+                      'extreme caution as there is currently no way to '
+                      'revert filenames!'),
 
     # The project's main homepage.
     url='https://github.com/saxbophone/emoticry',
