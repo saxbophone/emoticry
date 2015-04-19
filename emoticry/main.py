@@ -15,4 +15,13 @@ def main():
     """
     The main entry point function for running emoticry from the command line.
     """
-    emoticry.emojify(recursive=True)
+    parser = argparse.ArgumentParser(
+        prog='Emoticry',
+        description='Mercilessly translates file names to emoji',
+        epilog=('This program must be used with extreme caution '
+                'as there is currently no way to revert filenames!'))
+    parser.add_argument(name='path', default='.')
+    parser.add_argument(name='-R', dest='recursive', action='store_true')
+    parser.set_defaults(recursive=False)
+    args = parser.parse_args()
+    emoticry.emojify(args.path, args.recursive)
