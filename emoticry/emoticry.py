@@ -12,7 +12,7 @@ This file contains the bulk of logic for the emoticry library.
 class Translation(object):
     """
     A generic Translation class for translating filenames.
-    
+
     By default Translates names into hex.
     """
     def __init__(self, table=[hex(_)[2:] for _ in range(256)]):
@@ -285,8 +285,9 @@ emoji_translation = Translation(
         '🍖',
         '🍗',
         '🍙',
-        '🍚',]
+        '🍚']
 )
+
 
 def emojify(directory='.', recursive=False, translation=emoji_translation):
     """
@@ -299,11 +300,14 @@ def emojify(directory='.', recursive=False, translation=emoji_translation):
             directories = files[1]
             filenames = files[2]
             for i, d in enumerate(directories):
-                os.rename(os.path.join(path, d), os.path.join(path, translation.translate(d)))
+                os.rename(os.path.join(path, d),
+                          os.path.join(path, translation.translate(d)))
                 directories[i] = translation.translate(d)
             for i, f in enumerate(filenames):
-                os.rename(os.path.join(path, f), os.path.join(path, translation.translate(f)))
+                os.rename(os.path.join(path, f),
+                          os.path.join(path, translation.translate(f)))
                 filenames[i] = translation.translate(f)
     else:
         for f in os.listdir(directory):
-            os.rename(os.path.join(directory, f), os.path.join(directory, translation.translate(f)))
+            os.rename(os.path.join(directory, f),
+                      os.path.join(directory, translation.translate(f)))

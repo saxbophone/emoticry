@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import emoticry, main
+import emoticry
+import main
 
 __all__ = ['emoticry',
            'main']
