@@ -24,16 +24,15 @@ def main():
     parser.add_argument('path',
                         nargs='?',
                         default='.',
-                        help=('Specifies the path to the directory where'
+                        help=('Specifies the path to the directory where '
                               'files and directories will be renamed. '
-                              '(If not given then defaults to the current '
+                              '\n(If not given then defaults to the current '
                               'directory).'))
 
     parser.add_argument('-R',
                         dest='recursive',
                         action='store_true',
-                        help=('Recursively rename all files and directories. '
-                              '(Optional argument).'))
+                        help=('Recursively rename all files and directories.'))
     parser.set_defaults(recursive=False)
 
     args = parser.parse_args()
