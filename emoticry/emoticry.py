@@ -18,25 +18,17 @@ class Translation(object):
     """
     def __init__(self, table=[hex(_)[2:] for _ in range(256)]):
         self.table = table
-        for c in self.table:
-            c = c.encode('utf-8')
 
     def translate(self, name):
         new_name = ''
         for c in name:
-            if len(c) == 1:
-                new_name += self.table[ord(c)]
-            else:
-                new_name += c
+            new_name += self.table[ord(c)]
         return new_name
     
     def untranslate(self, name):
         new_name = ''
         for c in name:
-            if len(c) == 1:
-                new_name += chr(self.table.index(c))
-            else:
-                new_name += c
+            new_name += chr(self.table.index(c))
         return new_name
 
 
