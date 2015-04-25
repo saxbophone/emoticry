@@ -342,9 +342,9 @@ def emojify(directory='.',
         for f in os.listdir(directory):
 
             if rescue:
-                    new_name = translation.untranslate(f)
-                else:
-                    new_name = translation.translate(f)
+                new_name = translation.untranslate(f)
+            else:
+                new_name = translation.translate(f)
 
             os.rename(os.path.join(directory, f),
                       os.path.join(directory, new_name))
