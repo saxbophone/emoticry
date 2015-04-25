@@ -37,7 +37,9 @@ def main():
     parser.add_argument('--rescue',
                         dest='rescue',
                         action='store_true',
-                        help=('Recursively rename all files and directories.'))
+                        help=('Restore the names of files and directories '
+                              'from emoji (Not guaranteed to work between '
+                              'versions).'))
 
     parser.set_defaults(recursive=False,
                         rescue=False)
