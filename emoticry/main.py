@@ -29,12 +29,14 @@ def main():
                               '\n(If not given then defaults to the current '
                               'directory).'))
 
-    parser.add_argument(['-R', '--recursive'],
+    parser.add_argument('-R',
+                        '--recursive',
                         dest='recursive',
                         action='store_true',
                         help=('Recursively rename all files and directories.'))
 
-    parser.add_argument(['+r','--rescue'],
+    parser.add_argument('-r',
+                        '--rescue',
                         dest='rescue',
                         action='store_true',
                         help=('Restore the names of files and directories '
