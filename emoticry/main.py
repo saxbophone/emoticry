@@ -33,8 +33,17 @@ def main():
                         dest='recursive',
                         action='store_true',
                         help=('Recursively rename all files and directories.'))
-    parser.set_defaults(recursive=False)
+
+    parser.add_argument('--rescue',
+                        dest='rescue',
+                        action='store_true',
+                        help=('Recursively rename all files and directories.'))
+
+    parser.set_defaults(recursive=False,
+                        rescue=False)
 
     args = parser.parse_args()
 
-    emoticry.emojify(args.path, args.recursive)
+    emoticry.emojify(directory=args.path,
+                     recursive=args.recursive,
+                     rescue=args.rescue)
