@@ -20,13 +20,14 @@ class Translation(object):
         self.table = table
 
     def translate(self, name):
-        new_name = ''
+        new_name = unicode()
         for c in name:
             new_name += self.table[ord(c)]
         return new_name
     
     def untranslate(self, name):
-        new_name = ''
+        new_name = unicode()
+        name = name.decode('utf-8')
         for c in name:
             new_name += chr(self.table.index(c))
         return new_name
