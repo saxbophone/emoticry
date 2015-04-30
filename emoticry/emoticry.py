@@ -26,11 +26,8 @@ class Translation(object):
         return new_name
     
     def untranslate(self, name):
-        new_name = unicode()
-        name = name.decode('utf-8')
-        for c in name:
-            new_name += chr(self.table.index(c))
-        return new_name
+        raise NotImplementedError(('untranslate method is not currently '
+                                   'implemented.'))
 
 
 emoji_translation = Translation(
