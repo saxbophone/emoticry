@@ -298,6 +298,9 @@ def emojify(directory='.',
     For the given directory, iterate over all files and folders within it
     (optionally recursively) and translate the file name characters to emoji.
     """
+    if rescue:
+        raise NotImplementedError(('--rescue option is not currently '
+                                   'implemented.'))
     if recursive:
         for files in os.walk(directory, topdown=True):
 
