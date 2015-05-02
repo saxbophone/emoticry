@@ -2,7 +2,7 @@
 Mercilessly translates all names of files within a directory to emoji
 
 ```
-usage: Emoticry [-h] [-R] [-r] [path]
+usage: emoticry [-h] [-R] [-r] [path]
 
 Mercilessly translates file names to emoji
 

@@ -16,7 +16,7 @@ def main():
     The main entry point function for running emoticry from the command line.
     """
     parser = argparse.ArgumentParser(
-        prog='Emoticry',
+        prog='emoticry',
         description='Mercilessly translates file names to emoji',
         epilog=('Please use this program with caution as '
                 'recovery of file names is not guaranteed!'))
