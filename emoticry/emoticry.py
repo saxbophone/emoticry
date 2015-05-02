@@ -21,31 +21,16 @@ class Translation(object):
         self.table = table
 
     def translate(self, name):
-        new_name = unicode()
+        new_name = []
         for c in name.encode('utf-8'):
-            new_name += self.table[ord(c)]
-        return new_name
+            new_name.append(self.table[ord(c)])
+        return ' '.join(new_name)
     
     def untranslate(self, name):
+        chars = name.split()
         new_name = ''
-        chars = []
-        i = 0
-        while i < len(name):
-            if name[i] != u'\ud83d' and name[i] != u'\ud83c':
-                chars.append(name[i])
-                i += 1
-            else:
-                j = 1
-                while (name[i+j] == u'\ud83d' or name[i+j] == u'\ud83c')
-                      and i+j < len(name):
-                    j += 1
-                chars.append(name[i:j+1])
-                i += 2
-        print(chars)
         for c in chars:
-            print(c)
-            if c != '':
-                new_name += chr(self.table.index(c))
+            new_name += chr(self.table.index(c))
         return new_name
 
 
