@@ -31,14 +31,21 @@ class Translation(object):
         chars = []
         i = 0
         while i < len(name):
-            if name[i] != u'\ud83d':
+            if name[i] != u'\ud83d' and name[i] != u'\ud83c':
                 chars.append(name[i])
                 i += 1
             else:
-                chars.append(name[i:2])
+                j = 1
+                while (name[i+j] == u'\ud83d' or name[i+j] == u'\ud83c')
+                      and i+j < len(name):
+                    j += 1
+                chars.append(name[i:j+1])
                 i += 2
+        print(chars)
         for c in chars:
-            new_name += chr(self.table.index(c))
+            print(c)
+            if c != '':
+                new_name += chr(self.table.index(c))
         return new_name
 
 
