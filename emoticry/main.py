@@ -18,8 +18,8 @@ def main():
     parser = argparse.ArgumentParser(
         prog='Emoticry',
         description='Mercilessly translates file names to emoji',
-        epilog=('This program must be used with extreme caution '
-                'as there is currently no way to revert filenames!'))
+        epilog=('Please use this program with caution as '
+                'recovery of file names is not guaranteed!'))
 
     parser.add_argument('path',
                         nargs='?',
