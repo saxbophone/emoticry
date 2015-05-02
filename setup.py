@@ -6,18 +6,17 @@ from setuptools import setup
 
 setup(
     name='emoticry',
-    version='0.0.4',
+    version='0.0.5',
     description='Mercilessly translates file names to emoji',
     long_description=('Mercilessly translates all names of files within a '
-                      'directory to emoji. This program must be used with '
-                      'extreme caution as there is currently no way to '
-                      'revert filenames!'),
+                      'directory to emoji. Please use this program with '
+                      'caution as recovery of file names is not guaranteed!'),
     url='https://github.com/saxbophone/emoticry',
     author='Joshua Saxby',
     author_email='joshua.a.saxby@gmail.com',
     license='MIT',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: System Administrators',
@@ -41,4 +40,5 @@ setup(
             'emoticry=emoticry.main:main',
         ],
     },
+    zip_safe=False,
 )

@@ -294,7 +294,7 @@ emoji_translation = Translation(
         '🍚']
 )
 
-def emojify(directory='.',
+def emojify(directory=u'.',
             recursive=False,
             rescue=False,
             translation=emoji_translation):
