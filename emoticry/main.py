@@ -48,6 +48,6 @@ def main():
 
     args = parser.parse_args()
 
-    emoticry.emojify(directory=args.path,
+    emoticry.emojify(directory=unicode(args.path, 'utf-8'),
                      recursive=args.recursive,
                      rescue=args.rescue)

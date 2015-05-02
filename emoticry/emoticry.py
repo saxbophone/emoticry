@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 import os
 
+
 """emoticry.emoticry
 
 This file contains the bulk of logic for the emoticry library.
@@ -21,13 +22,24 @@ class Translation(object):
 
     def translate(self, name):
         new_name = unicode()
-        for c in name:
+        for c in name.encode('utf-8'):
             new_name += self.table[ord(c)]
         return new_name
     
     def untranslate(self, name):
-        raise NotImplementedError(('untranslate method is not currently '
-                                   'implemented.'))
+        new_name = ''
+        chars = []
+        i = 0
+        while i < len(name):
+            if name[i] != u'\ud83d':
+                chars.append(name[i])
+                i += 1
+            else:
+                chars.append(name[i:2])
+                i += 2
+        for c in chars:
+            new_name += chr(self.table.index(c))
+        return new_name
 
 
 emoji_translation = Translation(
@@ -298,9 +310,6 @@ def emojify(directory='.',
     For the given directory, iterate over all files and folders within it
     (optionally recursively) and translate the file name characters to emoji.
     """
-    if rescue:
-        raise NotImplementedError(('--rescue option is not currently '
-                                   'implemented.'))
     if recursive:
         for files in os.walk(directory, topdown=True):
 
