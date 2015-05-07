@@ -36,6 +36,8 @@ class Translation(object):
 
 class EmojiTranslation(Translation):
     """
+    The default Emoji Translation class, based on Translation class.
+    Defines default Emoji Translation table.
     """
     def __init__(self):
         Translation.__init__(
