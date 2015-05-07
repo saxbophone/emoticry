@@ -28,17 +28,18 @@ class Translation(object):
     
     def untranslate(self, name):
         chars = name.split()
-        new_name = ''
+        new_name = str()
         for c in chars:
             new_name += chr(self.table.index(c))
-        return new_name
+        return new_name.decode('utf-8')
 
 
 class EmojiTranslation(Translation):
     """
     """
     def __init__(self):
-        super.__init__(
+        Translation.__init__(
+            self,
             table=[
                 '😁',
                 '😂',
