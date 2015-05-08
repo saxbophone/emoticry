@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name='emoticry',
-    version='0.0.5',
+    version='0.0.6',
     description='Mercilessly translates file names to emoji',
     long_description=('Mercilessly translates all names of files within a '
                       'directory to emoji. Please use this program with '
