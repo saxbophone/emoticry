@@ -1,5 +1,8 @@
 # emoticry
+
 Mercilessly translates all names of files within a directory to emoji
+
+[![Build Status](https://travis-ci.org/saxbophone/emoticry.svg?branch=develop)](https://travis-ci.org/saxbophone/emoticry)
 
 ```
 usage: emoticry [-h] [-R] [-r] [path]

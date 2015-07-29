@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+
 import os
 
 
@@ -25,7 +26,7 @@ class Translation(object):
         for c in name.encode('utf-8'):
             new_name.append(self.table[ord(c)])
         return ' '.join(new_name)
-    
+
     def untranslate(self, name):
         chars = name.split()
         new_name = str()

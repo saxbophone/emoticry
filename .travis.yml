@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+  # - "3.2"
+  # - "3.3"
+  # - "3.4"
+  # - "nightly"
+# command to install dependencies
+install:
+  - "make install"
+# clean before run
+before_script:
+  - "make clean"
+# command to run tests
+script:
+  - "make lint"
+  - "make test"
+  - "make cover"
